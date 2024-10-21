@@ -1,31 +1,49 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  text-align: center;
+  font-family: 'glitch'
 }
 
-.App-link {
-  color: #61dafb;
+.App-header {
+  height: 10vh;
+  min-width: 100vw;
+}
+
+.App-main {
+  flex-grow: 1; /* Takes up the remaining space between header and footer */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  margin-bottom: 50px
+}
+
+.now-playing__cover {
+  height: 40vmin;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .now-playing__cover {
+    animation: now-playing-cover infinite 20s linear;
+  }
+}
+
+@keyframes now-playing-cover {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .App-login-button {
@@ -42,11 +60,33 @@
   background-color: aquamarine;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-webplayer-container {
+  /* border: 1px solid red; */
+  padding: 10px;
+  height: 60vh;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.main-img-container {
+  /* border: 1px solid blue; */
+  margin-bottom: 10vh;
+}
+
+.main-info-container {
+  margin: 5px;
+}
+
+.main-button-container {
+  padding: 15px;
+}
+
+.btn-spotify {
+  min-width: 100px;
+  max-width: 200px;
+  padding: 5px;
+  margin: 5px;
 }
