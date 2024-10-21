@@ -28,6 +28,20 @@
   color: #61dafb;
 }
 
+.App-login-button {
+  position: relative;
+  border: 1px solid aqua;
+  padding: 15px;
+  min-height: 15px;
+  min-width: 25px;
+  border-radius: 15px;
+  background-color: #61dafb;
+}
+
+.App-login-button:hover {
+  background-color: aquamarine;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
