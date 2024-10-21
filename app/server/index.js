@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require('cors');
 const request = require('request');
+const path = require('path');
 
 function generateRandomState (length) {
     var text = '';
@@ -23,6 +24,8 @@ var spotify_client_secret = process.env.SPOTIFY_CLIENT_SECRET;
 
 var app = express();
 var access_token = '';
+app.use(express.static(path.join(__dirname, '../build')));
+
 
 app.use(cors({
     origin: 'http://localhost:3000', // Replace with your frontend's URL
