@@ -3,16 +3,19 @@ import './App.css';
 import { useEffect, useState } from "react";
 
 var DEV_SERVER = "http://localhost:5001";
+const sampleSrc = "https://f4.bcbits.com/img/a3493924304_16.jpg";
+const sampleName = "gunk";
+const sampleArtist = "Overmono"
 
 const track = {
-  name: "",
+  name: sampleName,
   album: {
       images: [
-          { url: "" }
+          { url: sampleSrc }
       ]
   },
   artists: [
-      { name: "" }
+      { name: sampleArtist }
   ]
 }
 
@@ -81,12 +84,12 @@ function SpotifyWebPlayer ({imgUrl, token}) {
 
   return (
     <>
-        <div className="container">
-            <div className="main-wrapper">
-                <img src={current_track.album.images[0].url} 
-                     className="now-playing__cover" alt="" />
-
-                <div className="now-playing__side">
+        <div className="main-webplayer-container">
+              <div className="main-img-container">
+              <img src={current_track.album.images[0].url} 
+                     className="now-playing__cover" alt="now-playing__cover" />
+              </div>
+                <div className="main-info-container">
                     <div className="now-playing__name">{
                                   current_track.name
                                   }</div>
@@ -95,7 +98,7 @@ function SpotifyWebPlayer ({imgUrl, token}) {
                                   current_track.artists[0].name
                                   }</div>
                 </div>
-                <div>
+                <div className="main-button-container">
                 <button className="btn-spotify" onClick={() => { player?.previousTrack() }} >
                       &lt;&lt;
                 </button>
@@ -108,7 +111,6 @@ function SpotifyWebPlayer ({imgUrl, token}) {
                       &gt;&gt;
                 </button>
                 </div>
-            </div>
         </div>
      </>
   )
@@ -154,14 +156,15 @@ function App() {
 
 
   return (
-    <div className="SpotifyWebPlayer">
+    <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Welcome
+          Listen With Me
         </p>
-        { !authToken ? <Login /> : <SpotifyWebPlayer token={authToken}/>}
       </header>
+      <main className="App-main">
+        { !authToken ? <Login /> : <SpotifyWebPlayer token={authToken}/>}
+      </main>
     </div>
   );
 }
