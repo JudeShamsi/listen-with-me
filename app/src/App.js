@@ -2,11 +2,12 @@ import './App.css';
 import { useEffect, useState } from "react";
 import { Login } from './components/Login';
 import { SpotifyWebPlayer } from './components/SpotifyWebPlayer';
+import ThreeJSScene from './components/threeSample';
 
 var DEV_SERVER = "http://localhost:5001";
 
-function App() {
-
+function App() {  
+  
   const [authToken, setAuthToken] = useState(null);
 
   useEffect(() => {
@@ -38,6 +39,7 @@ function App() {
       </header>
       <main className="App-main">
         { !authToken ? <Login server={DEV_SERVER}/> : <SpotifyWebPlayer token={authToken} server={DEV_SERVER}/>}
+        {/* <ThreeJSScene /> */}
       </main>
     </div>
   );

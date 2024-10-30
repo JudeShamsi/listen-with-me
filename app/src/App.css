@@ -27,25 +27,6 @@
   margin-bottom: 50px
 }
 
-.now-playing__cover {
-  height: 40vmin;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .now-playing__cover {
-    animation: now-playing-cover infinite 20s linear;
-  }
-}
-
-@keyframes now-playing-cover {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .App-login-button {
   position: relative;
   border: 1px solid aqua;
@@ -60,33 +41,43 @@
   background-color: aquamarine;
 }
 
-.main-webplayer-container {
-  /* border: 1px solid red; */
-  padding: 10px;
-  height: 60vh;
-  width: 50vw;
+/* .flex-grid-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  border: 1px solid red;
   align-items: center;
+  max-width: 500px;
+  max-height: 500px; 
 }
 
-.main-img-container {
-  /* border: 1px solid blue; */
-  margin-bottom: 10vh;
-}
-
-.main-info-container {
-  margin: 5px;
-}
-
-.main-button-container {
-  padding: 15px;
-}
-
-.btn-spotify {
-  min-width: 100px;
-  max-width: 200px;
+.overmono-cover-art {
+  width: 100%;
+  height: auto;
+  border: 1px solid green;
   padding: 5px;
-  margin: 5px;
+} */
+
+.flex-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
+  grid-template-rows: repeat(2, 1fr);    /* Creates two equal rows */
+  max-width: 500px; /* Size of the main container */
+  max-height: 500px;
+  border: 1px solid red;
+  gap: 5px;
+  padding: 5px;
 }
+
+.overmono-cover-art {
+  width: 100%;
+  height: auto; /* Keeps the image's aspect ratio */
+  object-fit: cover; /* Crops the image if it exceeds the cell size */
+}
+
+
+
+
+
+

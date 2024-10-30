@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
+import './styles/SpotifyWebPlayer.css';
 
 const sampleSrc = "https://f4.bcbits.com/img/a3493924304_16.jpg";
 const sampleName = "gunk";
